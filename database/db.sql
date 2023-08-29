@@ -4,11 +4,12 @@ USE linksdb;
 
 -- TABLE USER
 -- all pasword wil be encrypted using SHA2
-CREATE TABLE users (
+CREATE TABLE usuarios (
   id INT(11) NOT NULL AUTO_INCREMENT,
   fullname VARCHAR(100) NOT NULL,
   email VARCHAR(100) NOT NULL,
   password VARCHAR(60) NOT NULL,
+  role ENUM('estudiante', 'docente'),
   created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id)
 ) AUTO_INCREMENT=2;

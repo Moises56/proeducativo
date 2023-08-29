@@ -5,7 +5,7 @@ import { pool } from "../database.js";
 export const renderSignUp = (req, res) => res.render("auth/signup");
 
 export const signUp = async (req, res, next) => {
-  const { fullname, email, password1 } = req.body;
+  const { fullname, email, password1, role } = req.body;
 
   const password = await encryptPassword(password1);
 
@@ -14,6 +14,7 @@ export const signUp = async (req, res, next) => {
     fullname,
     email,
     password,
+    role,
   });
 
   req.login(

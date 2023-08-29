@@ -2,30 +2,38 @@
   <div class="row">
     <div class="col-md-4 mx-auto">
       <form class="card card-body bg-dark text-white p-5" action="/signup" method="POST">
-        <h3 class="text-center fw-bold mb-4">SignUp</h3>
+        <h3 class="text-center fw-bold mb-4">Regístrese</h3>
 
-        <label for="fullname">Write your fullname:</label>
+        <label for="fullname">Escriba su nombre:</label>
         <input type="type" name="fullname" placeholder="John Doe" class="form-control mb-3" autofocus />
 
-        <label for="username">Write your Email:</label>
+        <label for="username">Escriba su Email:</label>
         <input type="email" name="email" placeholder="johndoe123" class="form-control mb-3" />
 
-        <label for="password">Write your password:</label>
+        <label for="password">Escriba su password:</label>
         <input type="password" name="password1" placeholder="Password" class="form-control mb-3" />
 
         {{!-- Confirm your password --}}
-        <label for="password">Confirm your password:</label>
+        <label for="password">Confirme su password:</label>
         <input type="password" name="password2" placeholder="Password" class="form-control mb-3" />
 
-        <button class="btn btn-success btn-block">
-          Register
+        {{!-- role docente o estudiante --}}
+        <select class="form-select" name="role" aria-label="Default select example">
+          <option selected>Seleccionar rol</option>
+          <option value="docente">Docente</option>
+          <option value="estudiante">Estudiante</option>
+        </select>
+
+
+        <button class="btn btn-success btn-block mt-4">
+          Registrarse
         </button>
     </div>
     </form>
 
     {{! Link }}
-    <p class="fs-5 text-center text-white mt-3">Do you already have an account?
-      <a href="/signin" class="text-info">Signin</a>
+    <p class="fs-5 text-center text-white mt-3">¿Ya tiene una cuenta?
+      <a href="/signin" class="text-info">Login</a>
     </p>
   </div>
 </div>
