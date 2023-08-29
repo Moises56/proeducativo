@@ -5,21 +5,21 @@
         <h3 class="text-center fw-bold mb-4">Regístrese</h3>
 
         <label for="nombre">Escriba su nombre:</label>
-        <input type="type" name="nombre" placeholder="user" class="form-control mb-3" autofocus />
+        <input type="type" name="nombre" placeholder="usuario" class="form-control mb-3" autofocus />
 
         <label for="username">Escriba su Email:</label>
         <input type="email" name="email" placeholder="user@mail.com" class="form-control mb-3" />
 
         <label for="password">Escriba su password:</label>
-        <input type="password" name="password1" placeholder="Password" class="form-control mb-3" />
+        <input type="password" name="password1" placeholder="Contraseña" class="form-control mb-3" />
 
         {{!-- Confirm your password --}}
         <label for="password">Confirme su password:</label>
-        <input type="password" name="password2" placeholder="Password" class="form-control mb-3" />
+        <input type="password" name="password2" placeholder="Contraseña" class="form-control mb-3" />
 
         {{!-- role docente o estudiante --}}
-        <select class="form-select" name="role" aria-label="Default select example">
-          {{!-- <option >Seleccionar rol</option> --}}
+        <select class="form-select" name="role" aria-label="Default select example" placeholder="Rol">
+          <option ></option>
           <option value="docente">Docente</option>
           <option value="estudiante">Estudiante</option>
         </select>
