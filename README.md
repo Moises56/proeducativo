@@ -2,7 +2,7 @@
 
 Notes App is a Multi Page Application using Nodejs and Mysql. The purpose of this web application is just to be an example for beginners.
 
-![](docs/screenshot2.png)
+![](docs/login.png)
 ![](docs/screenshot.png)
 
 ### Installation with Docker (Recommended)
