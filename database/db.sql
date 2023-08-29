@@ -6,7 +6,7 @@ USE linksdb;
 -- all pasword wil be encrypted using SHA2
 CREATE TABLE usuarios (
   id INT(11) NOT NULL AUTO_INCREMENT,
-  fullname VARCHAR(100) NOT NULL,
+  nombre VARCHAR(100) NOT NULL,
   email VARCHAR(100) NOT NULL,
   password VARCHAR(60) NOT NULL,
   role ENUM('estudiante', 'docente'),
@@ -14,14 +14,14 @@ CREATE TABLE usuarios (
   PRIMARY KEY (id)
 ) AUTO_INCREMENT=2;
 
--- drop table users
+-- drop table usuarios
 
-DESCRIBE users;
+DESCRIBE usuarios;
 
-INSERT INTO users (id, email, password, fullname) 
+INSERT INTO usuarios (id, email, password, nombre) 
   VALUES (1, 'john', 'john@gmail.com', 'John Carter');
 
-SELECT * FROM users;
+SELECT * FROM usuarios;
 
 -- LINKS TABLE
 CREATE TABLE links (
@@ -31,7 +31,7 @@ CREATE TABLE links (
   description TEXT,
   user_id INT(11),
   created_at timestamp NOT NULL DEFAULT current_timestamp,
-  CONSTRAINT fk_user FOREIGN KEY(user_id) REFERENCES users(id)
+  CONSTRAINT fk_user FOREIGN KEY(user_id) REFERENCES usuarios(id)
 );
 
 ALTER TABLE links

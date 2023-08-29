@@ -13,7 +13,7 @@ passport.use(
       passReqToCallback: true,
     },
     async (req, email, password, done) => {
-      const [rows] = await pool.query("SELECT * FROM users WHERE email = ?", [
+      const [rows] = await pool.query("SELECT * FROM usuarios WHERE email = ?", [
         email,
       ]);
 
@@ -40,6 +40,6 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser(async (id, done) => {
-  const [rows] = await pool.query("SELECT * FROM users WHERE id = ?", [id]);
+  const [rows] = await pool.query("SELECT * FROM usuarios WHERE id = ?", [id]);
   done(null, rows[0]);
 });

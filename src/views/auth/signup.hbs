@@ -4,11 +4,11 @@
       <form class="card card-body bg-dark text-white p-5" action="/signup" method="POST">
         <h3 class="text-center fw-bold mb-4">Regístrese</h3>
 
-        <label for="fullname">Escriba su nombre:</label>
-        <input type="type" name="fullname" placeholder="John Doe" class="form-control mb-3" autofocus />
+        <label for="nombre">Escriba su nombre:</label>
+        <input type="type" name="nombre" placeholder="user" class="form-control mb-3" autofocus />
 
         <label for="username">Escriba su Email:</label>
-        <input type="email" name="email" placeholder="johndoe123" class="form-control mb-3" />
+        <input type="email" name="email" placeholder="user@mail.com" class="form-control mb-3" />
 
         <label for="password">Escriba su password:</label>
         <input type="password" name="password1" placeholder="Password" class="form-control mb-3" />
@@ -19,7 +19,7 @@
 
         {{!-- role docente o estudiante --}}
         <select class="form-select" name="role" aria-label="Default select example">
-          <option selected>Seleccionar rol</option>
+          {{!-- <option >Seleccionar rol</option> --}}
           <option value="docente">Docente</option>
           <option value="estudiante">Estudiante</option>
         </select>
