@@ -7,7 +7,8 @@ import {
   renderLinks,
   deleteLink,
   editLink,
-  renderEditLink,
+  renderEditLink
+
 } from "../controllers/links.controller.js";
 import { createLinkSchema } from "../schemas/task.schema.js";
 
@@ -19,5 +20,8 @@ router.post("/add", isLoggedIn, validator(createLinkSchema), addLink);
 router.get("/delete/:id", isLoggedIn, deleteLink);
 router.get("/edit/:id", isLoggedIn, renderEditLink);
 router.post("/edit/:id", isLoggedIn, editLink);
+
+// router.get('/docente', CuentasEstudiantes );
+
 
 export default router;

@@ -12,6 +12,6 @@ router.use(index);
 router.use(auth);
 router.use(user);
 router.use("/links", links);
-router.use("/api", docente);
+router.use("/docente", docente);
 
 export default router;

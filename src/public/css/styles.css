@@ -80,7 +80,7 @@ body {
   background: #2D6653;
   height: calc(100vh - 50px);
   position: fixed;
-  top: 50px;
+  top: 56px;
   left: 0;
   width: 200px;
   overflow: auto;

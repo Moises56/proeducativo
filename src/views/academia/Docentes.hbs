@@ -9,8 +9,8 @@
         {{!-- <header class="main-header"> --}}
             {{!-- <div class="user-info">
                 <p><%= docente.nombre %></p>
-                <p><%= docente.role %></p>
-            </div> --}}
+                <p><%= docente.role %></p> --}}
+            </div>
             <nav class="navigation">
                 <ul>
                     <li><a href="/api/Docentes/CuentasEstudiantes" class="nav-link">Cuentas de Estudiantes</a></li>
@@ -26,23 +26,7 @@
         <!-- El contenido de inicia en Blanco, luego al dar clic en Cuentas de Estudiantes, Temas, Exámenes, Rendimiento mostraría el contenido de /api/Docentes/CuentasEstudiantes,/api/Docentes/Temas, /api/Docentes/Examenes, /api/Docentes/RendimientoEstudiantes en la etiqueta div id="main-content"  -->
         
     
-            {{!-- <h1>Bienvenido</h1> --}}
-            <div class="container p-4">
-              <div class="row">
-                <div class="col-md-4 mx-auto">
-                  <div class="card card-body bg-dark text-white text-center">
-                    <h1 class="fw-bold">Bienvenido {{user.fullname}}</h1>
-                    <h4>{{user.email}}</h4>
-                    <h6>{{user.role}}</h6>
-                    <p>{{timeago user.created_at}}</p>
-                    <a href="/links" class="btn btn-primary m-4">
-                      Guardar Progreso curso
-                    </a>
-                  </div>
-                </div>
-
-  </div>
-</div>
+            <h1>Bienvenido</h1>
         
     </div>
   <script>

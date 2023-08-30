@@ -13,7 +13,8 @@ export const addLink = async (req, res) => {
     },
   ]);
   await req.setFlash("success", "Link Saved Successfully");
-  res.redirect("/links");
+  res.redirect("docente/cuentasestudiante");
+  // res.redirect("/links");
 };
 
 export const renderLinks = async (req, res) => {
@@ -48,3 +49,11 @@ export const editLink = async (req, res) => {
   await req.setFlash("success", "Link Updated Successfully");
   res.redirect("/links");
 };
+
+
+// // render cuenta estudiante
+// export const CuentasEstudiantes = async(req, res) => {
+//   //mostrar todos los usuarios
+  
+//   res.render("links/cuentasestudiante");
+// };

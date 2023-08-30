@@ -1,11 +1,22 @@
 import { pool } from "../database.js";
 
-export const renderDocente = (req, res) => res.render("Docente/CuentasEstudiantes");
+export const Docente = async(req, res) => {
+  res.render("/academia/docente");
+
+};
+
 
 export const CuentasEstudiantes = async(req, res) => {
     //mostrar todos los usuarios
-    const usuarios = await pool.query("SELECT * FROM usuarios");
-    res.render("Docente/CuentasEstudiantes", { usuarios });
-
-
-};
+    // console.log("estudiantes: " + req.session.usuario)
+    //   if (req.session.usuario && req.session.usuario.role === 'docente') {
+    // pool.query('SELECT * FROM usuarios WHERE role = ? ORDER BY nombre DESC, email DESC', ['estudiante'], function(error, results) {
+    //   if (error) throw error;
+    //   console.log("estudiantes: " + results)
+    // });
+       res.render('/academia/cuentasestudiante');
+    //   });
+    // } else {
+    //   res.redirect('/');
+    // }
+  };
