@@ -1,7 +1,6 @@
 import { config } from "dotenv";
 config();
 
-// db railway
 export const database = {
   connectionLimit: 10,
   host: process.env.DATABASE_HOST || "containers-us-west-179.railway.app",
@@ -10,8 +9,6 @@ export const database = {
   database: process.env.DATABASE_NAME || "railway",
   port: process.env.DATABASE_PORT || 7199,
 };
-
-// db local
 // export const database = {
 //   connectionLimit: 10,
 //   host: process.env.DATABASE_HOST || "localhost",
