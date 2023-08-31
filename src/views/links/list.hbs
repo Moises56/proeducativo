@@ -5,7 +5,7 @@
                     <li><a href="/api/Docentes/CuentasEstudiantes" class="nav-link"></a></li>
                     <li><a href="/acedemia/cuentasestudiante" class="nav-link">Cuentas de Estudiantes</a></li>
                     <li><a href="/links" class="nav-link">Temas</a></li>
-                    <li><a href="/Docentes/Examenes" class="nav-link">Exámenes</a></li>
+                    <li><a href="/academia/Examenes" class="nav-link">Exámenes</a></li>
                     <li><a href="/Docentes/RendimientoEstudiantes" class="nav-link">Rendimiento</a></li>
                     <li><a href="/logout">Salir</a></li>
                 </ul>
@@ -16,7 +16,7 @@
     <div id="main-content">
         <!-- El contenido de inicia en Blanco, luego al dar clic en Cuentas de Estudiantes, Temas, Exámenes, Rendimiento mostraría el contenido de /api/Docentes/CuentasEstudiantes,/api/Docentes/Temas, /api/Docentes/Examenes, /api/Docentes/RendimientoEstudiantes en la etiqueta div id="main-content"  -->
 
-            <h1>Bienvenido</h1>
+            <h1 class="pt-4">Temas Creados</h1>
 
           {{!-- mostrar un car al darle click en Temas --}}
 
@@ -26,7 +26,8 @@
                 <div class="col-md-3 p-2">
                   <div class="card text-center bg-dark text-light h-100">
                     <div class="card-body">
-                      <a href="{{url}}" target="_blank" class="text-light">
+                      {{!-- <a href="{{url}}" target="_blank" class="text-light"> --}}
+                      <a href="academia/Examenes" target="_blank" class="text-light">
                         <h3 class="card-title text-uppercase">
                           {{title}}
                         </h3>

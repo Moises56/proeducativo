@@ -1,12 +1,27 @@
 -- Crear la tabla de usuarios
 
+-- crear la base de datos llamada proyectocarrera
+
+-- CREATE TABLE usuarios (
+--   id INT AUTO_INCREMENT PRIMARY KEY,
+--   nombre VARCHAR(50),
+--   email VARCHAR(50),
+--   password VARCHAR(255),
+--   role ENUM('estudiante', 'docente')
+-- );
+
+use proyectocarrera;
+
 CREATE TABLE usuarios (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(50),
-  email VARCHAR(50),
-  password VARCHAR(255),
-  role ENUM('estudiante', 'docente')
-);
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  nombre VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  password VARCHAR(60) NOT NULL,
+  role ENUM('estudiante', 'docente'),
+  created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+) AUTO_INCREMENT=2;
+
 
 -- Crear la tabla de temas
 CREATE TABLE temas (

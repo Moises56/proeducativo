@@ -13,9 +13,27 @@ export const addLink = async (req, res) => {
     },
   ]);
   await req.setFlash("success", "Link Saved Successfully");
-  res.redirect("docente/cuentasestudiante");
-  // res.redirect("/links");
+    res.redirect("/links");
 };
+
+// CREATE TABLE temas (
+//   id INT AUTO_INCREMENT PRIMARY KEY,
+//   nombre VARCHAR(50),
+//   descripcion VARCHAR(255),
+//   docente_id INT,
+//   FOREIGN KEY (docente_id) REFERENCES usuarios(id)
+// );
+// CREATE TABLE links (
+//   id INT(11) NOT NULL,
+//   title VARCHAR(150) NOT NULL,
+//   url VARCHAR(255) NOT NULL,
+//   description TEXT,
+//   user_id INT(11),
+//   created_at timestamp NOT NULL DEFAULT current_timestamp,
+//   CONSTRAINT fk_user FOREIGN KEY(user_id) REFERENCES usuarios(id)
+// );
+
+
 
 export const renderLinks = async (req, res) => {
   const [rows] = await pool.query("SELECT * FROM links WHERE user_id = ?", [
