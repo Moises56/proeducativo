@@ -24,4 +24,5 @@ router.post("/edit/:id", isLoggedIn, editLink);
 // router.get('/docente', CuentasEstudiantes );
 
 
+
 export default router;

@@ -1,5 +1,5 @@
-import app from "./app.js";
-import { port } from './config.js'
+import app from "./app.js"; // importando la aplicación
+import { port } from './config.js' // importando el puerto
 
-app.listen(port);
-console.log("Server is in port", port);
+app.listen(port); // inicializando el servidor
+console.log("Server is in port", port); // mostrando un mensaje en la consola

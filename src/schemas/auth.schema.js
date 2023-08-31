@@ -18,13 +18,13 @@ export const signupSchema = z
       }),
     password1: z
       .string({
-        required_error: "Password es obligatorio",
+        required_error: "Contraseña es obligatorio",
       })
       .min(6, {
-        message: "Password debe contener al menos 6 caracteres",
+        message: "Contraseña debe contener al menos 6 caracteres",
       }),
     password2: z.string({
-      required_error: "Password es obligatorio",
+      required_error: "Contraseña es obligatorio",
     }),
     //rol
     role: z.string({

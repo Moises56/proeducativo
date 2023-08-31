@@ -2,22 +2,22 @@ import passport from "passport";
 import { encryptPassword } from "../lib/helpers.js";
 import { pool } from "../database.js";
 
-export const renderSignUp = (req, res) => res.render("auth/signup");
+export const renderSignUp = (req, res) => res.render("auth/signup"); // renderizando la vista signup.hbs
 
-export const signUp = async (req, res, next) => {
-  const { nombre, email, password1, role } = req.body;
+export const signUp = async (req, res, next) => { // para registrar un usuario
+  const { nombre, email, password1, role } = req.body; // obteniendo los datos del formulario
 
-  const password = await encryptPassword(password1);
+  const password = await encryptPassword(password1); // encriptando la contraseña
 
   // Saving in the Database
-  const [result] = await pool.query("INSERT INTO usuarios SET ? ", {
+  const [result] = await pool.query("INSERT INTO usuarios SET ? ", { // guardando el usuario en la base de datos
     nombre,
     email,
     password,
     role,
   });
 
-  req.login(
+  req.login( // iniciando sesión
     {
       id: result.insertId,
       nombre,
@@ -27,23 +27,23 @@ export const signUp = async (req, res, next) => {
       if (err) {
         return next(err);
       }
-      return res.redirect("/links");
+      return res.redirect("/links"); // redireccionando a la página links
     }
   );
 };
 
-export const renderSignIn = (req, res) => {
-  res.render("auth/signin");
+export const renderSignIn = (req, res) => { // renderizando la vista signin.hbs
+  res.render("auth/signin"); 
 };
 
-export const signIn = passport.authenticate("local.signin", {
-  successRedirect: "/links",
+export const signIn = passport.authenticate("local.signin", { // para iniciar sesión
+  successRedirect: "/links", 
   failureRedirect: "/signin",
   passReqToCallback: true,
   failureFlash: true,
 });
 
-export const logout = (req, res, next) => {
+export const logout = (req, res, next) => { // para cerrar sesión
   req.logout(function (err) {
     if (err) return next(err);
     res.redirect("/");
