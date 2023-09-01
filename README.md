@@ -13,7 +13,7 @@ cd nodejs-mysql-links
 docker-compose up
 ```
 
-Now you can visit http://localhost:4000
+Now you can visit http://localhost:3000
 
 ### Manual Installation
 
