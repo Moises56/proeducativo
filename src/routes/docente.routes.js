@@ -6,7 +6,7 @@ import {
     CuentasEstudiantes,
     RegistrarEstudiante,
 } from "../controllers/docente.controller.js";
-import { createLinkSchema } from "../schemas/task.schema.js";
+import { createTemaSchema } from "../schemas/task.schema.js";
 
 const router = Router();
 

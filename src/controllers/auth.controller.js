@@ -27,7 +27,7 @@ export const signUp = async (req, res, next) => { // para registrar un usuario
       if (err) {
         return next(err);
       }
-      return res.redirect("/links"); // redireccionando a la página links
+      return res.redirect("/temas"); // redireccionando a la página links
     }
   );
 };
@@ -37,7 +37,7 @@ export const renderSignIn = (req, res) => { // renderizando la vista signin.hbs
 };
 
 export const signIn = passport.authenticate("local.signin", { // para iniciar sesión
-  successRedirect: "/links", 
+  successRedirect: "/temas", 
   failureRedirect: "/signin",
   passReqToCallback: true,
   failureFlash: true,

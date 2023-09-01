@@ -2,7 +2,7 @@
   <div class="row h-75 d-flex align-items-center">
     <div class="col-md-4 mx-auto">
       <div class="card bg-dark">
-        <form action="/links/add" method="POST" class="card-body">
+        <form action="/temas/add" method="POST" class="card-body">
 
           {{! Title and save button }}
           <div class="d-flex justify-content-between align-items-center mb-3">
@@ -11,29 +11,29 @@
               Save
             </button>
           </div>
-          <label for="title">Escribir un title:</label>
+          <label for="nombre">Escribir un tema:</label>
           <input
             type="text"
-            name="title"
+            name="nombre"
             class="form-control bg-dark text-light mb-3"
-            placeholder="Title"
+            placeholder="Nombre"
             autofocus
           />
-
+{{!-- 
           <label for="url">Website:</label>
           <input
             type="url"
             name="url"
             class="form-control bg-dark text-light mb-3"
             placeholder="URL"
-          />
+          /> --}}
 
-          <label for="description">Escribir una description:</label>
+          <label for="descripcion">Escribir una descripcion:</label>
           <textarea
-            name="description"
+            name="descripcion"
             rows="2"
             class="form-control bg-dark text-light mb-3"
-            placeholder="Description"
+            placeholder="Descripcion"
           ></textarea>
         </form>
       </div>
