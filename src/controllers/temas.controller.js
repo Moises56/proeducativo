@@ -109,3 +109,8 @@ export const eliminarEstudiante = async (req, res) => {
   // Redirige a la página de cuentas de estudiantes
   return res.redirect("/temas/cuentasestudiante");
 }
+
+// renderAddTest
+export const renderAddTest = async (req, res) => {
+  res.render("temas/Examenes");
+}
