@@ -17,7 +17,7 @@ import {
 
   //test
   renderAddTest,
-  addTest,
+  // addTest,
 
 } from "../controllers/temas.controller.js";
 import { createTemaSchema } from "../schemas/task.schema.js";
@@ -47,7 +47,7 @@ router.get('/eliminar/:id', eliminarEstudiante);
 
 //crear un examen de la tabla test
 router.get('/addTest', isLoggedIn, renderAddTest);
-router.post('/addTest', isLoggedIn, addTest);
+// router.post('/addTest', isLoggedIn, addTest);
 
 
 
