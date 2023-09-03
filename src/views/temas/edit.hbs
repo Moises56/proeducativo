@@ -1,44 +1,54 @@
-<div class="container p-4">
-  <div class="row">
-    <div class="col-md-4 mx-auto">
-      <div class="card bg-dark border border-dark">
-        <div class="card-body">
-          <form action="/temas/edit/{{tema.id}}" method="POST">
-            <div class="form-group">
-              <input
-                type="text"
-                name="nombre"
-                class="form-control bg-dark text-light"
-                placeholder="Nombre"
-                value="{{tema.nombre}}"
-                autofocus
-              />
-            </div>
-            {{!-- <div class="form-group">
-              <input
-                type="url"
-                name="url"
-                class="form-control bg-dark text-light"
-                placeholder="URL"
-                value="{{tema.url}}"
-              />
-            </div> --}}
-            <div class="form-group">
-              <textarea
-                name="descripcion"
-                rows="2"
-                class="form-control bg-dark text-light"
-                placeholder="Descripción"
-              >{{tema.descripcion}}</textarea>
-            </div>
-            <div class="form-group">
-              <button class="btn btn-success btn-block">
-                Save
-              </button>
-            </div>
-          </form>
+<div class="main-container">
+  {{!-- <header class="main-header"> --}}
+    <nav class="navigation">
+      <ul>
+        <li><a href="/temas/CuentasEstudiantes" class="nav-link"></a></li>
+        <li><a href="/academia/cuentasestudiantes" class="nav-link">Cuentas de Estudiantes</a></li>
+        <li><a href="/temas" class="nav-link">Temas</a></li>
+        <li><a href="/test/addTest" class="nav-link">Exámenes</a></li>
+        <li><a href="/temas/RendimientoEstudiantes" class="nav-link">Rendimiento</a></li>
+        <li><a href="/logout">Salir</a></li>
+      </ul>
+    </nav>
+    {{!--
+  </header> --}}
+</div>
+{{!-- {{/each}} --}}
+<div id="main-content">
+  <!-- El contenido de inicia en Blanco, luego al dar clic en Cuentas de Estudiantes, Temas, Exámenes, Rendimiento mostraría el contenido de /api/Docentes/CuentasEstudiantes,/api/Docentes/Temas, /api/Docentes/Examenes, /api/Docentes/RendimientoEstudiantes en la etiqueta div id="main-content"  -->
+
+  <h1 class="pt-2">Editar Tema</h1>
+
+  {{!-- mostrar un car al darle click en Temas --}}
+
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-md-4 mx-auto">
+        <div class="card bg-dark border border-dark">
+          <div class="card-body">
+            <form action="/temas/edit/{{tema.id}}" method="POST">
+              <div class="form-group">
+                <input type="text" name="nombre" class="form-control bg-dark text-light" placeholder="Nombre"
+                  value="{{tema.nombre}}" autofocus />
+              </div>
+              {{!-- <div class="form-group">
+                <input type="url" name="url" class="form-control bg-dark text-light" placeholder="URL"
+                  value="{{tema.url}}" />
+              </div> --}}
+              <div class="form-group">
+                <textarea name="descripcion" rows="2" class="form-control bg-dark text-light"
+                  placeholder="Descripción">{{tema.descripcion}}</textarea>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-success btn-block">
+                  Save
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
 </div>

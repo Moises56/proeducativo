@@ -2,7 +2,7 @@
   <div class="container">
     <a class="navbar-brand" href="/">
       {{!-- <i class="fas fa-link"></i> --}}
-      <img class="logo-upn" src="../img/logoupn.png" alt="">
+      <img class="logo-upn" src="/img/logoupn.png" alt="">
       Software Educativo 
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -26,11 +26,15 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="/temas">Todas las tareas</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/temas/add">Añadir Tarea</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/academia/Examenes">Cuentas Estudiantes</a>
+              {{!-- mostrar añadir tarea solo si tiene el rol de docente --}}
+           
+                <a class="dropdown-item" href="/temas/add">Añadir Tarea</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/test/addTest">Añadir Examen</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/test/listTest">Ver test</a>
             </div>
-          </li>
+          </li> 
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"

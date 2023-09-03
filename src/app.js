@@ -4,7 +4,8 @@ import path from "path";
 import { create } from "express-handlebars";
 import passport from "passport";
 import cookieParser from "cookie-parser";
-import flash from "connect-flash";
+// import flash from "connect-flash";
+import flash from "express-flash";
 import session from "express-session";
 import expressMySQLSession from "express-mysql-session";
 import { promiseConnectFlash } from "async-connect-flash";
@@ -48,6 +49,8 @@ app.use(
   })
 );
 
+app.use(flash());
+
 app.use(promiseConnectFlash()); // para usar los mensajes flash
 app.use(passport.initialize()); // para inicializar passport
 app.use(passport.session()); // para usar persistent login sessions
@@ -58,6 +61,8 @@ app.use(async (req, res, next) => { // para usar variables globales en las vista
   app.locals.success = await req.getFlash("success");
   app.locals.error = await req.getFlash("error");
   app.locals.user = req.user; // para usar el usuario en las vistas
+  //mostrar el role del usuario en la consola
+  // console.log(req.user);
   next();
 });
 

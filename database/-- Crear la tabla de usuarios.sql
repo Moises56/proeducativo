@@ -40,6 +40,11 @@ CREATE TABLE tests (
   FOREIGN KEY (tema_id) REFERENCES temas(id)
 );
 
+ALTER TABLE tests
+ADD COLUMN docente_id INT,
+ADD FOREIGN KEY (docente_id) REFERENCES usuarios(id);
+
+
 -- Crear la tabla de preguntas
 CREATE TABLE preguntas (
   id INT AUTO_INCREMENT PRIMARY KEY,

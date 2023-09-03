@@ -1,0 +1,103 @@
+<div class="main-container">
+    {{!-- <header class="main-header"> --}}
+        <nav class="navigation">
+            <ul>
+                <li><a href="/temas/CuentasEstudiantes" class="nav-link"></a></li>
+                <li><a href="/academia/cuentasestudiantes" class="nav-link">Cuentas de Estudiantes</a></li>
+                <li><a href="/temas" class="nav-link">Temas</a></li>
+                <li><a href="/test/addTest" class="nav-link">Crear Test</a></li>
+                <li><a href="/test/listTest" class="nav-link">Ver Tests</a></li>
+                <li><a href="/temas/RendimientoEstudiantes" class="nav-link">Rendimiento</a></li>
+                <li><a href="/logout">Salir</a></li>
+            </ul>
+        </nav>
+        {{!--
+    </header> --}}
+</div>
+{{!-- {{/each}} --}}
+<div id="main-content">
+
+
+    <div class="container mt-5">
+        <h2>Crear Test</h2>
+        <form action="/test/addTest" method="POST" id="test-form">
+            <div class="form-group">
+                <label for="test-name">Nombre del Test:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="tema_id">Tema:</label>
+                <select class="form-control" id="tema_id" name="tema_id" required>
+                    <!-- Opciones de temas deben ser generadas dinámicamente desde la base de datos -->
+                    {{#each temas}}
+                    <option value="{{id}}">{{nombre}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+            {{!-- <div class="form-group">
+                <h3>Preguntas del Test</h3>
+                <div class="question-container">
+                    <!-- Preguntas se agregan dinámicamente aquí -->
+                    <div class="form-group">
+                        <label for="question">Pregunta:</label>
+                        <input type="text" class="form-control question" name="question[]" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="option1">Opción 1:</label>
+                        <input type="text" class="form-control option" name="option1[]" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="option2">Opción 2:</label>
+                        <input type="text" class="form-control option" name="option2[]" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="option3">Opción 3:</label>
+                        <input type="text" class="form-control option" name="option3[]" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="option4">Opción 4:</label>
+                        <input type="text" class="form-control option" name="option4[]" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="correct-answer">Respuesta Correcta:</label>
+                        <select class="form-control correct-answer" name="correct-answer[]" required>
+                            <option value="1">Opción 1</option>
+                            <option value="2">Opción 2</option>
+                            <option value="3">Opción 3</option>
+                            <option value="4">Opción 4</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" id="add-question">Agregar Pregunta</button>
+            </div> --}}
+            <button type="submit" class="btn btn-success">Guardar Test</button>
+        </form>
+    </div>
+
+    <!-- Agregar enlaces a los archivos JS de Bootstrap y jQuery (si es necesario) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const addQuestionButton = document.getElementById('add-question');
+            const questionContainer = document.querySelector('.question-container');
+
+            addQuestionButton.addEventListener('click', function () {
+                // Clonar la pregunta y sus elementos
+                const clonedQuestion = questionContainer.cloneNode(true);
+
+                // Limpiar los valores de los campos clonados
+                const clonedInputs = clonedQuestion.querySelectorAll('input, select');
+                clonedInputs.forEach(input => {
+                    input.value = '';
+                });
+
+                // Agregar la pregunta clonada al formulario
+                document.getElementById('test-form').appendChild(clonedQuestion);
+            });
+        });
+    </script>
+</div>
