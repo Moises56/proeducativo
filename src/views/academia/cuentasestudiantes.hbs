@@ -31,20 +31,18 @@
   {{!-- <header class="main-header"> --}}
     <nav class="navigation">
       <ul>
-        <li><a href="/temas/CuentasEstudiantes" class="nav-link"></a></li>
-        <li><a href="/academia/cuentasestudiantes" class="nav-link">Cuentas de Estudiantes</a></li>
-        <li><a href="/temas" class="nav-link">Temas</a></li>
-        {{!-- mostrar crear test solo si tiene el rol de docente --}}
-        {{#if user.role}}
-        <li><a href="/test/addTest" class="nav-link">Crear Test</a></li>
-        {{/if}}
-        <li><a href="/test/listTest" class="nav-link">Ver Tests</a></li>
-
-        <li><a href="/temas/RendimientoEstudiantes" class="nav-link">Rendimiento</a></li>
-        <li><a href="/logout">Salir</a></li>
+        <ul>
+          <li><a href="/temas/CuentasEstudiantes" class="nav-link"></a></li>
+          <li><a href="/academia/cuentasestudiantes" class="nav-link">Cuentas de Estudiantes</a></li>
+          <li><a href="/temas" class="nav-link">Temas</a></li>
+          <li><a href="/test/addTest" class="nav-link">Crear Test</a></li>
+          <li><a href="/test/listTest" class="nav-link">Ver Tests</a></li>
+          <li><a href="/temas/RendimientoEstudiantes" class="nav-link">Rendimiento</a></li>
+          <li><a href="/logout">Salir</a></li>
+        </ul>
       </ul>
     </nav>
-    
+
     {{!--
   </header> --}}
 </div>
@@ -81,12 +79,12 @@
             <td>{{password}} </td>
             <td>
               <a href="/academia/edit/{{id}}" class="btn btn-secondary">
-              {{!-- <a href="/academia/edit/{{id}}" class="btn btn-secondary" data-bs-toggle="modal"
-                data-bs-target="#exampleModal2"> --}}
-                <i class="fas fa-marker"></i>
-              </a>
-              <a href="/academia/delete/{{id}}" class="btn btn-danger">
-                <i class="far fa-trash-alt"></i>
+                {{!-- <a href="/academia/edit/{{id}}" class="btn btn-secondary" data-bs-toggle="modal"
+                  data-bs-target="#exampleModal2"> --}}
+                  <i class="fas fa-marker"></i>
+                </a>
+                <a href="/academia/delete/{{id}}" class="btn btn-danger">
+                  <i class="far fa-trash-alt"></i>
             </td>
           </tr>
           {{!-- <a class="btn btn-danger" href="/temas/delete/{{id}}"></a> --}}
@@ -165,13 +163,16 @@
                 <h3 class="text-center fw-bold mb-4">Editar Estudiante</h3>
 
                 <label for="nombre">Escriba el nombre del estudiante:</label>
-                <input value="{{estudiante.nombre}}" type="text" name="nombre" placeholder="usuario" class="form-control mb-3" autofocus />
+                <input value="{{estudiante.nombre}}" type="text" name="nombre" placeholder="usuario"
+                  class="form-control mb-3" autofocus />
 
                 <label for="username">Escriba el Correo:</label>
-                <input value="{{estudiante.email}}" type="email" name="email" placeholder="youremail@mail.com" class="form-control mb-3" />
+                <input value="{{estudiante.email}}" type="email" name="email" placeholder="youremail@mail.com"
+                  class="form-control mb-3" />
 
                 <label for="password">Escriba la Contraseña:</label>
-                <input value="{{estudiante.password}}" type="password" name="password1" placeholder="Contraseña" class="form-control mb-3" />
+                <input value="{{estudiante.password}}" type="password" name="password1" placeholder="Contraseña"
+                  class="form-control mb-3" />
 
                 {{!-- Confirm your password --}}
                 <label for="password">Confirmar la Contraseña:</label>

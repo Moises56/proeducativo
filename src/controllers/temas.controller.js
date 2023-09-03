@@ -1,9 +1,5 @@
 import passport from "passport";
 import { encryptPassword } from "../lib/helpers.js";
-
-
-
-
 import { pool } from "../database.js";
 
 export const renderAddTema = (req, res) => res.render("temas/add");

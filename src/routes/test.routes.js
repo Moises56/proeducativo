@@ -8,6 +8,9 @@ import {
   renderAddTest,
   addTest,
   renderTest,
+  deleteTest,
+  renderEditTest,
+  editTest,
 } from "../controllers/test.controller.js";
 import { createTemaSchema } from "../schemas/task.schema.js";
 
@@ -18,6 +21,11 @@ router.get("/addTest",isLoggedIn, isDocente, renderAddTest);
 router.post("/addTest",isLoggedIn, isDocente, addTest);
 
 router.get("/listTest",isLoggedIn, isDocente, renderTest);
+router.get("/delete/:id",isLoggedIn, isDocente, deleteTest);
+
+//editar un test
+router.get('/edit/:id', isLoggedIn, isDocente, renderEditTest);
+router.post('/edit/:id', isLoggedIn, isDocente, editTest);
 
 
 

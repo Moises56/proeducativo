@@ -74,17 +74,13 @@
             <td>{{tema_id}} </td>
             <td>{{docente_id}} </td>
             <td>
-              <a href="/tests/edit/{{id}}" class="btn btn-secondary">
-              {{!-- <a href="/academia/edit/{{id}}" class="btn btn-secondary" data-bs-toggle="modal"
-                data-bs-target="#exampleModal2"> --}}
+              <a href="/test/edit/{{id}}" class="btn btn-secondary">
                 <i class="fas fa-marker"></i>
               </a>
               <a href="/test/delete/{{id}}" class="btn btn-danger">
                 <i class="far fa-trash-alt"></i>
             </td>
           </tr>
-          {{!-- <a class="btn btn-danger" href="/temas/delete/{{id}}"></a> --}}
-
           {{/each}}
         </tbody>
       </table>

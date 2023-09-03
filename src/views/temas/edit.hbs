@@ -2,12 +2,15 @@
   {{!-- <header class="main-header"> --}}
     <nav class="navigation">
       <ul>
-        <li><a href="/temas/CuentasEstudiantes" class="nav-link"></a></li>
-        <li><a href="/academia/cuentasestudiantes" class="nav-link">Cuentas de Estudiantes</a></li>
-        <li><a href="/temas" class="nav-link">Temas</a></li>
-        <li><a href="/test/addTest" class="nav-link">Exámenes</a></li>
-        <li><a href="/temas/RendimientoEstudiantes" class="nav-link">Rendimiento</a></li>
-        <li><a href="/logout">Salir</a></li>
+        <ul>
+          <li><a href="/temas/CuentasEstudiantes" class="nav-link"></a></li>
+          <li><a href="/academia/cuentasestudiantes" class="nav-link">Cuentas de Estudiantes</a></li>
+          <li><a href="/temas" class="nav-link">Temas</a></li>
+          <li><a href="/test/addTest" class="nav-link">Crear Test</a></li>
+          <li><a href="/test/listTest" class="nav-link">Ver Tests</a></li>
+          <li><a href="/temas/RendimientoEstudiantes" class="nav-link">Rendimiento</a></li>
+          <li><a href="/logout">Salir</a></li>
+        </ul>
       </ul>
     </nav>
     {{!--
@@ -25,20 +28,18 @@
     <div class="row">
       <div class="col-md-4 mx-auto">
         <div class="card bg-dark border border-dark">
-          <div class="card-body">
+          <div class="card-body text-center">
             <form action="/temas/edit/{{tema.id}}" method="POST">
-              <div class="form-group">
-                <input type="text" name="nombre" class="form-control bg-dark text-light" placeholder="Nombre"
+              <div class="form-group ">
+                <input type="text" name="nombre" class="form-control bg-dark text-light mt-2 pt-2" placeholder="Nombre"
                   value="{{tema.nombre}}" autofocus />
               </div>
-              {{!-- <div class="form-group">
-                <input type="url" name="url" class="form-control bg-dark text-light" placeholder="URL"
-                  value="{{tema.url}}" />
-              </div> --}}
+              <br />
               <div class="form-group">
                 <textarea name="descripcion" rows="2" class="form-control bg-dark text-light"
                   placeholder="Descripción">{{tema.descripcion}}</textarea>
               </div>
+              <br />
               <div class="form-group">
                 <button class="btn btn-success btn-block">
                   Save
@@ -50,5 +51,7 @@
       </div>
     </div>
   </div>
+
+
 
 </div>
