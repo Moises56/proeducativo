@@ -49,7 +49,7 @@ app.use(
   })
 );
 
-app.use(flash());
+app.use(flash()); // para usar los mensajes flash
 
 app.use(promiseConnectFlash()); // para usar los mensajes flash
 app.use(passport.initialize()); // para inicializar passport

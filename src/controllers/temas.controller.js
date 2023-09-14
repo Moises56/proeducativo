@@ -59,3 +59,4 @@ export const editTema = async (req, res) => {
 export const renderAddTest = async (req, res) => {
   res.render("temas/Examenes");
 }
+

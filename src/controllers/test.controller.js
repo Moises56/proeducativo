@@ -54,6 +54,7 @@ export const addTest = async (req, res) => {
       const [temas] = await pool.query("SELECT * FROM temas WHERE id = ?", [
         rows[0].tema_id,
       ]);
+      
 
       //mostrar por consola los temas
       console.log(temas);
